@@ -15,7 +15,7 @@ const CSS_plugin = new Mini_css_extract_plugin({
 
 module.exports = {
     mode: 'development',
-    entry: path.resolve(__dirname,'../src/index.tsx'),
+    entry: path.resolve(__dirname,'../src'),
     output: {
         filename: "bundle.js",
         path: path.resolve(__dirname,'../dist')
@@ -34,6 +34,17 @@ module.exports = {
                     'css-loader',
                     'sass-loader'
                 ]
+            },
+            {
+                test: /\.(png|jpe?g|gif)$/i,
+                loader: 'file-loader',
+                options: {
+                  name: '[path][name].[ext]',
+                },
+            },
+            {
+                test: /\.svg$/,
+                use: '@svgr/webpack'
             }
         ]
     },
