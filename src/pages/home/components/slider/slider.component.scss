@@ -1,0 +1,81 @@
+@import '../../../../scss/fonts','../../../../scss/colors.scss';
+
+.slider_c_c {
+    background-size: cover;
+    padding: 40px 20px;
+
+    .slides_container {
+        position: relative;
+        width: 100%;
+        height: 500px;
+
+        .slide {
+            display: grid;
+            justify-items: center;
+            color: $color_3;
+            gap: 15px;
+            position: absolute;
+            opacity: 0;
+            visibility: hidden;
+            transition: opacity .3s ease, visibility .3s ease;
+
+            .img_container {
+                width: 80%;
+
+                img {
+                    max-width: 100%;;
+                }
+            }
+
+            .title_slide {
+                font-family: $font_1;
+                font-weight: 400;
+            }
+
+            .price_slide {
+                font-family: $font_3;
+                font-size: 2rem;
+            }
+
+            .description_slide {
+                font-family: $font_4;
+                text-align: center;
+                line-height: 1.4rem;
+            }
+        }
+
+        .slide.active {
+            opacity: 1;
+            visibility: visible;
+        }
+    }
+
+    .controls {
+        display: flex;
+        margin: 20px auto 0px auto;
+        width: 40%;
+        justify-content: space-between;
+
+        button {
+            border: none;
+            outline: none;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            background-color: transparent;
+
+            svg {
+                transform: scale(2);
+                fill: $color_3;
+            }
+        }
+
+        .btn_left {
+            svg {
+                transform: rotate(180deg) scale(2);
+            }
+        }
+    }
+}
