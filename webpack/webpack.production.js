@@ -5,22 +5,28 @@ const Mini_css_extract_plugin = require('mini-css-extract-plugin');
 const HTML_plugin = new HTML_webpack_plugin({
     filename: "index.html",
     template: path.resolve(__dirname,'../src/index.html'),
-    minify: true
+    minify: true,
+    favicon: path.resolve(__dirname,'../src/favicon.svg'),
 });
 
 const CSS_plugin = new Mini_css_extract_plugin({
-    filename: "main.css"
+    filename: "main.[contenthash].css"
 })
 
 module.exports = {
     mode: 'production',
     entry: {
-        bundle: path.resolve(__dirname,'../src/index.tsx'),
+        index: './src/index.tsx'
     },
     output: {
-        filename: '[name].js',
+        filename: '[name].[contenthash].js',
         path: path.resolve(__dirname,'../dist')
     },
+    optimization: {
+
+        runtimeChunk: 'single',
+    
+      },
     
     module: {
         rules: [
@@ -36,6 +42,17 @@ module.exports = {
                     'css-loader',
                     'sass-loader'
                 ]
+            },
+            {
+                test: /\.(png|jpe?g|gif)$/i,
+                loader: 'file-loader',
+                options: {
+                  name: 'assets/[name].[ext]',
+                },
+            },
+            {
+                test: /\.svg$/,
+                use: '@svgr/webpack'
             }
         ]
     },

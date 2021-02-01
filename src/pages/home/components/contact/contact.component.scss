@@ -1,0 +1,138 @@
+@import '../../../../scss/fonts','../../../../scss/colors.scss';
+
+.contact_c_c {
+    padding: 0px 30px 70px 30px;
+
+    .title_contact {
+        text-align: center;
+        color: $color_2;
+        font-family: $font_1;
+        font-weight: 400;
+    }
+
+    .map_c {
+        border: 2px solid $color_1;
+        border-radius: 10px;
+        padding: 15px;
+        height: 450px;
+        margin-top: 30px;
+
+        iframe {
+            width: 100%;
+            height: 100%;
+            border-radius: 10px;
+        }
+    }
+
+    .data_c {
+        margin-top: 30px;
+
+        .title_data {
+            text-align: center;
+            color: $color_2;
+            font-family: $font_1;
+            font-weight: 400;
+        }
+
+        .descrp_data {
+            text-align: center;
+            font-family: $font_4;
+            color: $color_3;
+            margin-top: 20px;
+            line-height: 25px;
+        }
+
+        .information {
+            background-color: #131313;
+            border-radius: 10px;
+            padding: 20px;
+            display: grid;
+            gap: 15px;
+            margin-top: 30px;
+
+            .section_title {
+                font-family: $font_1;
+                color: $color_2;
+                font-weight: 400;
+            }
+
+            .line_inf {
+                display: flex;
+                justify-content: space-between;
+
+                span {
+                    &:nth-child(1) {
+                        font-family: $font_4;
+                        color: $color_3;
+                        font-size: 14px;
+                    }
+
+                    &:nth-child(2) {
+                        font-family: $font_4;
+                        color: $color_1;
+                        font-size: 14px;
+                    }
+                }
+            }
+
+            .district {
+                font-size: 18px;
+                font-weight: 600;
+                color: $color_3;
+                font-family: $font_4;
+            }
+
+            .street {
+                font-size: 14px;
+                color: $color_3;
+                font-family: $font_4;
+                display: block;
+            }
+        }
+
+        .form {
+            margin-top: 30px;
+            display: grid;
+            gap: 25px;
+
+            input {
+                border: 2px solid $color_3;
+                border-radius: 10px;
+                height: 45px;
+                background-color: transparent;
+                outline: none;
+                padding: 0px 20px;
+                color: $color_3;
+
+                &::placeholder {
+                    color: $color_3;
+                }
+            }
+
+            textarea {
+                border: 2px solid $color_3;
+                border-radius: 10px;
+                background-color: transparent;
+                outline: none;
+                padding: 20px;
+                color: $color_3;
+                height: 250px;
+                font-family: $font_4;
+
+                &::placeholder {
+                    color: $color_3;
+                }
+            }
+
+            button[type="button"] {
+                height: 45px;
+                background-color: $color_2;
+                color: $color_4;
+                font-family: $font_4;
+                border-radius: 10px;
+                outline: none;
+                border: none;
+            }
+        }
+    }
+}
