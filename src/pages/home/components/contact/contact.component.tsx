@@ -1,7 +1,16 @@
 import React from "react";
+import { useForm } from "react-hook-form";
 import "./contact.component.scss";
 
 export const ContactComponent = () => {
+  const { register, handleSubmit, errors } = useForm();
+
+  const pattern = /^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$/;
+
+  const sendMessage = (data: any) => {
+    console.log(data);
+  };
+
   return (
     <div className="contact_c_c">
       <h1 className="title_contact">Contactanos</h1>
@@ -52,11 +61,55 @@ export const ContactComponent = () => {
         </div>
 
         <form action="" className="form">
-          <input type="text" placeholder="Nombre"/>
-          <input type="text" placeholder="Email"/>
-          <input type="text" placeholder="Asunto"/>
-          <textarea placeholder="Mensaje"/>
-          <button type="button" className="btn_send">Enviar</button>
+          <input
+            type="text"
+            name="name"
+            className={errors.name?.type === "required" ? "error" : ""}
+            placeholder="Nombre"
+            ref={register({
+              required: true,
+            })}
+          />
+          <input
+            type="text"
+            name="email"
+            className={
+              errors.email?.type === "required"
+                ? "error"
+                : errors.email?.type === "pattern"
+                ? "error"
+                : ""
+            }
+            placeholder="Email"
+            ref={register({
+              required: true,
+              pattern: pattern,
+            })}
+          />
+          <input
+            type="text"
+            name="subject"
+            className={errors.subject?.type === "required" ? "error" : ""}
+            placeholder="Asunto"
+            ref={register({
+              required: true,
+            })}
+          />
+          <textarea
+            name="message"
+            placeholder="Mensaje"
+            className={errors.message?.type === "required" ? "error" : ""}
+            ref={register({
+              required: true,
+            })}
+          />
+          <button
+            type="button"
+            className="btn_send"
+            onClick={handleSubmit(sendMessage)}
+          >
+            Enviar
+          </button>
         </form>
       </div>
     </div>

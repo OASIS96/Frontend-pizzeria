@@ -1,0 +1,55 @@
+@import '../../../../scss/fonts','../../../../scss/colors.scss';
+
+.footer_c_c {
+    background-color: #000000;
+    padding: 40px 0px;
+    display: grid;
+    gap: 30px;
+    justify-items: center;
+
+    .logo {
+        text-align: center;
+        color: $color_1;
+        font-family: $font_2;
+        font-size: 2.5rem;
+    }
+
+    .social_c {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        width: 60%;
+
+        a {
+
+            svg {
+                transform: scale(.8);
+            }
+        }
+    }
+
+    .menu_c {
+        display: flex;
+        justify-content: space-between;
+        width: 80%;
+        span {
+            color: $color_3;
+            font-family: $font_4;
+            font-size: 12px;
+        }
+    }
+
+    .rigths {
+        color: $color_3;
+        font-family: $font_4;
+        text-align: center;
+        width: 80%;
+        font-size: 13px;
+        line-height: 20px;
+
+        a {
+            color: red;
+            text-decoration: none;
+        }
+    }
+}

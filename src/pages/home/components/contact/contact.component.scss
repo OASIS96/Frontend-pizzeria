@@ -103,10 +103,15 @@
                 outline: none;
                 padding: 0px 20px;
                 color: $color_3;
+                transition: border .3s ease;
 
                 &::placeholder {
                     color: $color_3;
                 }
+            }
+
+            input.error {
+                border: 2px solid red;
             }
 
             textarea {
@@ -118,10 +123,15 @@
                 color: $color_3;
                 height: 250px;
                 font-family: $font_4;
+                transition: border .3s ease;
 
                 &::placeholder {
                     color: $color_3;
                 }
+            }
+
+            textarea.error {
+                border: 2px solid red;
             }
 
             button[type="button"] {

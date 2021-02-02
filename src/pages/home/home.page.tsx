@@ -7,6 +7,7 @@ import { SliderComponent } from "./components/slider/slider.component";
 import BG from "../../assets/Image-about.jpg";
 
 import "./home.styles.scss";
+import { FooterComponent } from "./components/footer/footer.component";
 
 export const HomePage = () => {
   return (
@@ -18,6 +19,7 @@ export const HomePage = () => {
         <MenuComponent />
         <ContactComponent />
       </div>
+      <FooterComponent />
     </div>
   );
 };
