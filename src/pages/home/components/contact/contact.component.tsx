@@ -61,48 +61,70 @@ export const ContactComponent = () => {
         </div>
 
         <form action="" className="form">
-          <input
-            type="text"
-            name="name"
-            className={errors.name?.type === "required" ? "error" : ""}
-            placeholder="Nombre"
-            ref={register({
-              required: true,
-            })}
-          />
-          <input
-            type="text"
-            name="email"
-            className={
-              errors.email?.type === "required"
-                ? "error"
-                : errors.email?.type === "pattern"
-                ? "error"
-                : ""
-            }
-            placeholder="Email"
-            ref={register({
-              required: true,
-              pattern: pattern,
-            })}
-          />
-          <input
-            type="text"
-            name="subject"
-            className={errors.subject?.type === "required" ? "error" : ""}
-            placeholder="Asunto"
-            ref={register({
-              required: true,
-            })}
-          />
-          <textarea
-            name="message"
-            placeholder="Mensaje"
-            className={errors.message?.type === "required" ? "error" : ""}
-            ref={register({
-              required: true,
-            })}
-          />
+          <div className="input_c">
+            <input
+              type="text"
+              name="name"
+              className={errors.name?.type === "required" ? "error" : ""}
+              placeholder="Nombre"
+              ref={register({
+                required: true,
+              })}
+            />
+            {errors.name?.type === "required" ? (
+              <p className="message_error visible">EL nombre es requerido</p>
+            ) : null}
+          </div>
+          <div className="input_c">
+            <input
+              type="text"
+              name="email"
+              className={
+                errors.email?.type === "required"
+                  ? "error"
+                  : errors.email?.type === "pattern"
+                  ? "error"
+                  : ""
+              }
+              placeholder="Email"
+              ref={register({
+                required: true,
+                pattern: pattern,
+              })}
+            />
+            {errors.email?.type === "required" ? (
+              <p className="message_error visible">EL email es requerido</p>
+            ) : errors.email?.type === "pattern" ? (
+              <p className="message_error visible">EL email es invalido</p>
+            ) : null}
+          </div>
+          <div className="input_c">
+            <input
+              type="text"
+              name="subject"
+              className={errors.subject?.type === "required" ? "error" : ""}
+              placeholder="Asunto"
+              ref={register({
+                required: true,
+              })}
+            />
+            {errors.subject?.type === "required" ? (
+              <p className="message_error visible">EL asunto es requerido</p>
+            ) : null}
+          </div>
+          <div className="textarea_c">
+            <textarea
+              name="message"
+              placeholder="Mensaje"
+              className={errors.message?.type === "required" ? "error" : ""}
+              ref={register({
+                required: true,
+              })}
+            />
+            {errors.message?.type === "required" ? (
+              <p className="message_error visible">EL mensaje es requerido</p>
+            ) : null}
+          </div>
           <button
             type="button"
             className="btn_send"

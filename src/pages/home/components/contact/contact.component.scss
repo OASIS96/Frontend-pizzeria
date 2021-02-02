@@ -93,25 +93,65 @@
         .form {
             margin-top: 30px;
             display: grid;
-            gap: 25px;
+            gap: 5px;
 
-            input {
-                border: 2px solid $color_3;
-                border-radius: 10px;
-                height: 45px;
-                background-color: transparent;
-                outline: none;
-                padding: 0px 20px;
-                color: $color_3;
-                transition: border .3s ease;
+            .input_c {
+                height: 75px;
 
-                &::placeholder {
+                input {
+                    border: 2px solid $color_3;
+                    border-radius: 10px;
+                    height: 45px;
+                    width: 100%;
+                    background-color: transparent;
+                    outline: none;
+                    padding: 0px 20px;
                     color: $color_3;
+                    transition: border .3s ease;
+    
+                    &::placeholder {
+                        color: $color_3;
+                    }
+                }
+
+                input.error {
+                    border: 2px solid red;
+                }
+
+                .message_error {
+                    color: red;
+                    font-family: $font_4;
+                    margin-top: 10px;
+                    opacity: 0;
+                    transition: opacity .3s ease,visibility .3s ease;
+                }
+
+                .message_error.visible {
+                    opacity: 1;
+                    visibility: visible;
                 }
             }
 
-            input.error {
-                border: 2px solid red;
+            .textarea_c {
+                height: 280px;
+
+                textarea {
+                    width: 100%;
+                }
+
+                .message_error {
+                    color: red;
+                    font-family: $font_4;
+                    margin-top: 10px;
+                    opacity: 0;
+                    visibility: hidden;
+                    transition: opacity .3s ease;
+                }
+
+                .message_error.visible {
+                    opacity: 1;
+                    visibility: visible;
+                }
             }
 
             textarea {
