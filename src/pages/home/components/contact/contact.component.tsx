@@ -1,8 +1,9 @@
 import React from "react";
 import { useForm } from "react-hook-form";
+import { ContactI } from "../../../../models/contact.model";
 import "./contact.component.scss";
 
-export const ContactComponent = () => {
+export const ContactComponent = ({contactRef}:ContactI) => {
   const { register, handleSubmit, errors } = useForm();
 
   const pattern = /^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$/;
@@ -12,7 +13,7 @@ export const ContactComponent = () => {
   };
 
   return (
-    <div className="contact_c_c">
+    <div className="contact_c_c" ref={contactRef}>
       <h1 className="title_contact">Contactanos</h1>
       <div className="map_c">
         <iframe
