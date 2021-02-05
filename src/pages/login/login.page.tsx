@@ -1,11 +1,13 @@
-import React from 'react'
+import React from "react";
+import FormComponent from "./components/form/form.component";
+import './login.page.scss';
 
 const LoginPage = () => {
-    return (
-        <div>
-            LoginPage
-        </div>
-    )
-}
+  return (
+    <div className="login_p_c">
+      <FormComponent />
+    </div>
+  );
+};
 
-export default LoginPage
+export default LoginPage;

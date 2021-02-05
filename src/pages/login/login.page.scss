@@ -1,0 +1,9 @@
+@import '../../scss/colors.scss','../../scss/colors.scss';
+
+.login_p_c {
+    background-color: $color_5;
+    height: 100vh;
+    display: grid;
+    justify-items: center;
+    align-items: center;
+}
