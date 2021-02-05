@@ -1,4 +1,4 @@
-import React, { useRef } from "react";
+import React, { useEffect, useRef } from "react";
 import { AboutComponent } from "./components/about/about.component";
 import { BannerComponent } from "./components/banner/banner.component";
 import { ContactComponent } from "./components/contact/contact.component";
@@ -8,12 +8,21 @@ import BG from "../../assets/Image-about.jpg";
 
 import "./home.styles.scss";
 import { FooterComponent } from "./components/footer/footer.component";
+import axios from "axios";
 
 
-
-export const HomePage = () => {
+const HomePage = () => {
 
   const contactRef = useRef<HTMLDivElement>(null);
+
+  const getData = async () => {
+    const { data } = await axios.get("http://localhost:4000/api/slide-pizzas");
+    console.log(data);
+  }
+
+  useEffect(()=>{
+    getData();
+  },[])
 
   return (
     <div className="home_p_c">
@@ -28,3 +37,5 @@ export const HomePage = () => {
     </div>
   );
 };
+
+export default HomePage
