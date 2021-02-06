@@ -1,15 +1,35 @@
-import React from "react";
+import axios from "axios";
+import React, { useState } from "react";
 import { useForm } from "react-hook-form";
 import { LoginUser } from "../../../../models/formLogin.model";
+import SnackBar from "@material-ui/core/Snackbar";
 import "./form.component.scss";
+import { variables } from "../../../../environments/variables";
+import { useHistory } from "react-router-dom";
 
 const pattern = /^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$/;
 
 const FormComponent = () => {
-  const { register, handleSubmit, errors } = useForm();
+  const { register, handleSubmit, errors } = useForm({defaultValues:{
+    username: 'diegorrc147@gmail.com',
+    password: '12345678'
+  }});
+  const [open, setOpen] = useState(false);
+  const [message, setMessage] = useState("");
+  const history = useHistory();
 
-  const loginUser = (user:LoginUser) => {
-    console.log(user)
+  const loginUser = async (user: LoginUser) => {
+    const { data } = await axios.post(
+      `${variables.BACKED_URI}/api/login-user`,
+      user
+    );
+    if (!data.token) {
+      setMessage(data.status);
+      return setOpen(true);
+    }
+    localStorage.setItem("pizto1",data.token);
+    history.push("/admin");
+    return;
   };
 
   return (
@@ -41,7 +61,7 @@ const FormComponent = () => {
             name="password"
             ref={register({
               required: true,
-              minLength: 8
+              minLength: 8,
             })}
           />
           {errors.password?.type === "required" ? (
@@ -54,6 +74,14 @@ const FormComponent = () => {
           Ingresar
         </button>
       </form>
+
+      <SnackBar
+        open={open}
+        className="snackbar"
+        autoHideDuration={3000}
+        onClose={() => setOpen(false)}
+        message={message}
+      />
     </div>
   );
 };

@@ -1,6 +1,6 @@
 import React from 'react'
 
-const AmingPage = () => {
+const AdminPage = () => {
     return (
         <div>
             AdminPage
@@ -8,4 +8,4 @@ const AmingPage = () => {
     )
 }
 
-export default AmingPage
+export default AdminPage

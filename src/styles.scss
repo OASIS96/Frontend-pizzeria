@@ -1,7 +1,7 @@
 // Font
 
 @import url('https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Dancing+Script:wght@400;500;600;700&family=Fredericka+the+Great&family=Josefin+Sans:wght@100;200;300;400;500;600&display=swap');
-
+@import './scss/colors.scss';
 * {
     padding: 0;
     margin: 0;
@@ -15,6 +15,20 @@ html {
 .fadeIn {
     animation: fadeIn .3s ease forwards;
 }
+
+.snackbar {
+
+    .MuiSnackbarContent-root {
+        background-color: $color_3;
+        color: $color_4;
+
+        .MuiSnackbarContent-message {
+            color: red;
+        }
+    }
+
+    
+} 
 
 @keyframes fadeIn {
     from {
