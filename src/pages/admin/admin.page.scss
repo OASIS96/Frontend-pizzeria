@@ -1,0 +1,12 @@
+@import "../../scss/colors.scss", "../../scss/fonts.scss";
+
+.admin_p_c {
+    background-color: $color_6;
+    height: 100vh;
+    padding: 20px;
+
+    .box_dd {
+        height: 50px;
+        background-color: red;
+    }
+}

@@ -1,0 +1,106 @@
+@import '../../../../scss/colors.scss','../../../../scss/fonts.scss';
+
+.header_c_c {
+    background-color: $color_3;
+    border-radius: 5px;
+    box-shadow: 0px 0px 20px 2px rgba(0, 0, 0, .1);
+    padding: 0px 15px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    .logo {
+        font-family: $font_2;
+        color: $color_1;
+    }
+
+    .btn_avatar {
+        display: block;
+        width: 30px;
+        height: 30px;
+        cursor: pointer;
+        overflow: hidden;
+        border-radius: 50%;
+        outline: none;
+        border: none;
+        img {
+            width: 100%;
+            object-fit: cover;
+            height: 100%;
+        }
+    }
+
+    .nav_click_c {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100vh;
+        display: flex;
+        opacity: 0;
+        background-color: rgba(0, 0, 0, .4);
+        visibility: hidden;
+        transition: visibility .3s ease, opacity .3s ease;
+        
+        .nav {
+            width: 60%;
+            height: 100%;
+            display: block;
+            background-color: $color_3;
+            padding: 20px;
+            transform: translateX(-100%);
+            transition: transform .3s ease;
+
+            .logo_nav {
+                font-family: $font_2;
+                color: $color_1;
+            }
+
+            .menu {
+                list-style: none;
+                margin-top: 20px;
+
+                .menu_item {
+                    padding: 13px 5px;
+                    font-family: $font_4;
+                    font-weight: 300;
+                    display: flex;
+                    align-items: center;
+                    border-radius: 5px;
+                    text-decoration: none;
+                    color: $color_4;
+                    outline: none;
+
+                    svg {
+                        margin-right: 15px;
+                    }
+                }
+
+                .menu_item.active {
+                    background-color: #dcdde1;
+                }
+            }
+        }
+    }
+
+    .nav_click_c.visible {
+        visibility: visible;
+        opacity: 1;
+
+        .nav {
+            transform: translateX(0%);
+        }
+    }
+
+    .switch_c {
+        border: 1px solid red;
+        position: absolute;
+        width: 100%;
+        height: 50px;
+        top: 100px;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+
+    
+}

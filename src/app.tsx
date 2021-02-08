@@ -16,12 +16,17 @@ export const App = () => {
   return (
     <Router>
       <Switch>
-        <PublicRoutes Component={HomePage} path="/home" />
+        <Route path="/home">
+          <Suspense fallback="Cargando">
+          <HomePage />
+          </Suspense>
+        </Route>
 
         <PublicRoutes Component={LoginPage} path="/login" />
 
         <PrivateRoute Component={AdminPage} path="/admin"></PrivateRoute>
-        <Redirect from="/" to="/home" />
+
+        <Redirect from="*" exact={true} to="/home" />
       </Switch>
     </Router>
   );

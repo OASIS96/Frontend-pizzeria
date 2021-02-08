@@ -1,18 +1,19 @@
-import React, { Suspense } from 'react'
-import { Redirect, Route } from 'react-router-dom';
+import React, { Suspense } from "react";
+import { Redirect, Route } from "react-router-dom";
 
-const PrivateRoute = ({Component, path}:any) => {
-    const token = localStorage.getItem('pizto1');
-    if(token) {
-        return <Route exact path={path}>
+const PrivateRoute = ({ Component, path }: any) => {
+  const token = localStorage.getItem("pizto1");
+  if (token) {
+    return (
+      <Route path={path} >
         <Suspense fallback={"Cargando"}>
           <Component />
         </Suspense>
       </Route>
-    }
+    );
+  }
 
-    return <Redirect to="/login"/>
-    
-}
+  return <Redirect to="/login" />;
+};
 
-export default PrivateRoute
+export default PrivateRoute;

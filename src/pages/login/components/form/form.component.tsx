@@ -28,7 +28,7 @@ const FormComponent = () => {
       return setOpen(true);
     }
     localStorage.setItem("pizto1",data.token);
-    history.push("/admin");
+    history.push("/admin/dashboard");
     return;
   };
 
