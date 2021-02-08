@@ -5,10 +5,6 @@ import SliderPageAdmin from "./pages/slider/slider.page";
 
 const AdminRouter = () => {
 
-  const { path } = useRouteMatch();
-
-  console.log('ddxd',path)
-
   return (
     <Switch>
       <Route exact path="/admin/dashboard">

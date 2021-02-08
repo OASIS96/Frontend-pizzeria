@@ -1,0 +1,86 @@
+@import '../../../../../../scss/colors.scss','../../../../../../scss/fonts.scss';
+
+.stadistics_c_c {
+    background-color: $color_3;
+    border-radius: 5px;
+    box-shadow: 0px 0px 20px 2px rgba(0, 0, 0, .1);
+    padding: 15px;
+    font-family: $font_4;
+
+    .header_stadistics {
+        display: flex;
+        justify-content: space-between;
+
+        .stadistics_title {
+            font-size: 1.2rem;
+        }
+
+        .updated_text {
+            font-weight: 300;
+            font-size: .8rem;
+        }
+    }
+
+    .boxes_c {
+        display: grid;
+        gap: 20px;
+        margin-top: 20px;
+
+        .box {
+            display: grid;
+            grid-template-columns: 1fr 4fr;
+
+            .icon_c {
+                width: 40px;
+                height: 40px;
+                border-radius: 50%;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                grid-row: 1 / 3;
+            }
+
+            .cathegorie {
+                grid-column: 2 / 3;
+                font-weight: 300;
+                font-size: .9rem;
+            }
+
+            &:nth-child(1) {
+                .icon_c {
+                    background-color: rgba($color: $color_7, $alpha: .2);
+                    svg {
+                        fill: $color_7;
+                    }
+                }
+            }
+
+            &:nth-child(2) {
+                .icon_c {
+                    background-color: rgba($color: $color_8, $alpha: .2);
+                    svg {
+                        fill: $color_8;
+                    }
+                }
+            }
+
+            &:nth-child(3) {
+                .icon_c {
+                    background-color: rgba($color: $color_9, $alpha: .2);
+                    svg {
+                        fill: $color_9;
+                    }
+                }
+            }
+
+            &:nth-child(4) {
+                .icon_c {
+                    background-color: rgba($color: $color_10, $alpha: .2);
+                    svg {
+                        fill: $color_10;
+                    }
+                }
+            }
+        }
+    }
+}

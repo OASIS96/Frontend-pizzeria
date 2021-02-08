@@ -1,5 +1,5 @@
 import React from 'react';
-import './stadistics.scss';
+import './stadistics.component.scss';
 import IconArrow from '@material-ui/icons/TrendingUp';
 import IconPerson from '@material-ui/icons/PermIdentity';
 import IconPizza from '@material-ui/icons/LocalPizzaOutlined';

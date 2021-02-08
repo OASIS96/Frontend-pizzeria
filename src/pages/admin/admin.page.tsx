@@ -3,7 +3,6 @@ import "./admin.page.scss";
 import AdminRouter from "./admin.router";
 import HeaderComponent from "./components/header/header.component";
 
-
 const AdminPage = () => {
 
   return (
