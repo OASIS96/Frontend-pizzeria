@@ -42,7 +42,7 @@ const StadisticsComponent = () => {
                         <IconDollar />
                     </div>
                     <span className="number">230K</span>
-                    <span className="cathegorie">INgresos</span>
+                    <span className="cathegorie">Ingresos</span>
                 </div>
             </div>
         </div>

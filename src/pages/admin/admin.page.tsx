@@ -7,10 +7,8 @@ const AdminPage = () => {
 
   return (
     <div className="admin_p_c">
-      <div className="container_admin">
-        <HeaderComponent />
+      <HeaderComponent />
         <AdminRouter />
-      </div>
     </div>
   );
 };
