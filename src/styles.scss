@@ -16,6 +16,10 @@ html {
     animation: fadeIn .3s ease forwards;
 }
 
+canvas {
+    max-width: 100%;
+}
+
 .snackbar {
 
     .MuiSnackbarContent-root {
