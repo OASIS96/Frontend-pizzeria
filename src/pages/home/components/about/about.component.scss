@@ -37,6 +37,7 @@
         position: relative;
         display: grid;
         gap: 30px;
+        justify-items: center;
         margin-top: 30px;
 
         .card {
@@ -55,6 +56,38 @@
                 font-family: $font_4;
                 line-height: 25px;
                 text-align: center;
+            }
+        }
+    }
+}
+
+@media (min-width:768px) {
+    .about_c_c {
+        padding: 70px 100px;
+        
+        .title_about {
+            font-size: 3rem;
+        }
+
+        .descrip_about {
+            font-size: 1.2rem;
+            line-height: 1.7rem;
+        }
+
+        .cards_container {
+            margin-top: 70px;
+
+            .card {
+                width: 350px;
+
+                .title_card {
+                    font-size: 2rem;
+                    letter-spacing: 1px;
+                }
+                .description_card {
+                    font-size: 1.2rem;
+                    line-height: 1.7rem;
+                }
             }
         }
     }
