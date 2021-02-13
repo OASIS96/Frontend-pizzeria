@@ -47,7 +47,8 @@
             top: 0;
             background-color: $color_3;
             color: $color_4;
-            width: 200px;
+            width: 60%;
+            max-width: 250px;
             height: 100vh;
             padding: 30px;
             list-style: none;
@@ -64,7 +65,7 @@
 
             .menu_item {
                 padding: 10px 0px;
-                font-size: $font_4;
+                font-family: $font_4;
                 cursor: pointer;
             }
         }
@@ -88,7 +89,7 @@
             font-family: $font_3;
             font-weight: 500;
             text-align: center;
-            font-size: 50px;
+            font-size: 3rem;
         }
 
         .description_banner {
@@ -103,11 +104,57 @@
             width: 120px;
             height: 35px;
             justify-self: center;
-            font-size: 12px;
+            font-size: .8rem;
             color: $color_2;
             background-color: transparent;
             font-family: $font_1;
             outline: none;
+        }
+    }
+}
+
+@media (min-width:768px) {
+    .banner_c_c {
+        .header {
+            padding: 30px 100px;
+
+            .logo {
+                font-size: 2.7rem;
+            }
+
+            .button_menu {
+                width: 40px;
+            }
+
+            .menu {
+                .header_menu {
+                    font-size: 2.7rem;
+                }
+
+                .menu_item {
+                    font-size: 1.2rem;
+                    padding: 15px 0px;
+                }
+            }
+        }
+
+        .banner_content {
+            gap: 30px;
+
+            .title_banner {
+                font-size: 4rem;
+            }
+
+            .description_banner {
+                font-size: 1.2rem;
+                line-height: 1.7rem;
+            }
+
+            .button_banner {
+                width: 200px;
+                height: 40px;
+                font-size: 1rem;
+            }
         }
     }
 }
