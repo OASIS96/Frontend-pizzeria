@@ -15,6 +15,7 @@
         display: grid;
         gap: 35px;
         margin-top: 50px;
+
         .card {
             display: grid;
             justify-items: center;
@@ -52,5 +53,38 @@
         font-size: 12px;
         font-weight: 600;
         letter-spacing: 1px;
+    }
+}
+
+@media (min-width:768px) {
+        .menu_c_c {
+
+            .title_menu {
+                font-size: 3rem;
+            }
+
+            .cards_c {
+                width: 45%;
+                gap: 30px;
+                margin: 50px auto 0px auto;
+
+            .card {
+
+                .title_card {
+                    font-size: 2rem;
+                }
+
+                .descr_card {
+                    font-size: 1.2rem;
+                    line-height: 1.7rem;
+                }
+            }
+        }
+
+        .btn_load_more {
+            width: 200px;
+            height: 45px;
+            font-size: 1rem;
+        }
     }
 }
