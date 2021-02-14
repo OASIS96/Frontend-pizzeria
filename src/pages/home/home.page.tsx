@@ -4,7 +4,7 @@ import { BannerComponent } from "./components/banner/banner.component";
 import { ContactComponent } from "./components/contact/contact.component";
 import { MenuComponent } from "./components/menu/menu.component";
 import { SliderComponent } from "./components/slider/slider.component";
-import BG from "../../assets/Image-about.jpg";
+import BG from "../../assets/bg.jpg";
 
 import "./home.styles.scss";
 import { FooterComponent } from "./components/footer/footer.component";
@@ -21,7 +21,6 @@ const HomePage = () => {
   }
 
   useEffect(()=>{
-    getData();
   },[])
 
   return (

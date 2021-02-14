@@ -53,3 +53,19 @@
         }
     }
 }
+
+@media (min-width:768px) {
+    .footer_c_c {
+        .logo {
+            font-size: 3rem;
+        }
+
+        .social_c {
+            width: 30%;
+        }
+
+        .menu_c {
+            width: 50%;
+        }
+    }
+}

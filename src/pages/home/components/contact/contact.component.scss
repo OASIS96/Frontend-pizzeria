@@ -2,6 +2,8 @@
 
 .contact_c_c {
     padding: 0px 30px 70px 30px;
+    position: relative;
+    z-index: 1;
 
     .title_contact {
         text-align: center;
@@ -137,6 +139,23 @@
 
                 textarea {
                     width: 100%;
+                    border: 2px solid $color_3;
+                    border-radius: 10px;
+                    background-color: transparent;
+                    outline: none;
+                    padding: 20px;
+                    color: $color_3;
+                    height: 250px;
+                    font-family: $font_4;
+                    transition: border .3s ease;
+
+                    &::placeholder {
+                        color: $color_3;
+                    }
+                }
+
+                textarea.error {
+                    border: 2px solid red;
                 }
 
                 .message_error {
@@ -154,27 +173,8 @@
                 }
             }
 
-            textarea {
-                border: 2px solid $color_3;
-                border-radius: 10px;
-                background-color: transparent;
-                outline: none;
-                padding: 20px;
-                color: $color_3;
-                height: 250px;
-                font-family: $font_4;
-                transition: border .3s ease;
-
-                &::placeholder {
-                    color: $color_3;
-                }
-            }
-
-            textarea.error {
-                border: 2px solid red;
-            }
-
-            button[type="button"] {
+            
+            .btn_send {
                 height: 45px;
                 background-color: $color_2;
                 color: $color_4;
@@ -182,7 +182,80 @@
                 border-radius: 10px;
                 outline: none;
                 border: none;
+                margin-top: 5px;
             }
+        }
+    }
+}
+
+@media (min-width:768px) {
+    .contact_c_c {
+        padding: 0px 100px 70px 100px;
+
+        .title_contact {
+            font-size: 3rem;
+        }
+
+        .data_c {
+            .title_data {
+                font-size: 2.5rem;
+            }
+
+            .descrp_data {
+                font-size: 1.2rem;
+                line-height: 1.7rem;
+            }
+
+            .information {
+                width: 450px;
+                margin: 30px auto 0px auto;
+
+                .section_title {
+                    font-size: 1.8rem;
+                }
+
+                .line_inf {
+                    span {
+                        &:nth-child(1) {
+                            font-size: 1.2rem;
+                        }
+
+                        &:nth-child(2) {
+                            font-size: 1.2rem;
+                        }
+                    }
+                }
+
+                .district {
+                    font-size: 1.2rem;
+                }
+
+                .street {
+                    font-size: 1.2rem;
+                }
+            }
+
+            .form {
+                width: 450px;
+                margin: 40px auto 0px auto;
+
+                .input_c {
+                    input {
+                        font-size: 1rem;
+                    }
+                }
+
+                .textarea_c {
+                    textarea {
+                        font-size: 1.2rem;
+                    }
+                }
+
+                .btn_send  {
+                    font-size: 1.2rem;
+                }
+            }
+            
         }
     }
 }
