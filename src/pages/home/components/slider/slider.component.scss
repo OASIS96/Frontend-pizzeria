@@ -30,6 +30,7 @@
                 .title_slide {
                     font-family: $font_1;
                     font-weight: 400;
+                    text-align: center;
                 }
     
                 .price_slide {
@@ -71,6 +72,50 @@
         .btn_left {
             svg {
                 transform: rotate(180deg) scale(2);
+            }
+        }
+    }
+}
+
+@media (min-width:768px) {
+    .slider_c_c {
+        padding: 40px 120px;
+
+        .container {
+            .slides_container {
+                .slide,.slide_first,.slide_last {
+                    .title_slide {
+                        font-size: 2.5rem;
+                    }
+                    .price_slide {
+                        font-size: 2.5rem;
+                    }
+
+                    .description_slide {
+                        font-size: 1.2rem;
+                        line-height: 1.7rem;
+                    }
+                }
+            }
+        }
+
+        .controls {
+            width: 50%;
+
+            button {
+                width: 55px;
+                height: 50px;
+
+                svg {
+                    transform: scale(3);
+                }
+            }
+
+            .btn_left {
+
+                svg {
+                    transform: rotate(180deg) scale(3);
+                }
             }
         }
     }
