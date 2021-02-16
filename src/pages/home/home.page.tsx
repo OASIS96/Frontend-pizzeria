@@ -21,16 +21,20 @@ const HomePage = () => {
         menuRef={menuRef}
         aboutRef={aboutRef}
       />
-      <AboutComponent aboutRef={aboutRef}/>
+      <AboutComponent aboutRef={aboutRef} />
       <SliderComponent />
       <div
         className="container_home_page"
         style={{ backgroundImage: `url(${BG})` }}
       >
-        <MenuComponent menuRef={menuRef}/>
+        <MenuComponent menuRef={menuRef} />
         <ContactComponent contactRef={contactRef} />
       </div>
-      <FooterComponent />
+      <FooterComponent
+        contactRef={contactRef}
+        menuRef={menuRef}
+        aboutRef={aboutRef}
+      />
     </div>
   );
 };

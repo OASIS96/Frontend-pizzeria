@@ -21,9 +21,17 @@
         width: 60%;
 
         a {
-
+            
             svg {
                 transform: scale(.8);
+                fill: $color_3;
+                transition: fill .3s ease;
+            }
+
+            &:hover {
+                svg {
+                    fill: $color_2;
+                }
             }
         }
     }
@@ -32,10 +40,17 @@
         display: flex;
         justify-content: space-between;
         width: 80%;
+
         span {
             color: $color_3;
             font-family: $font_4;
             font-size: 12px;
+            cursor: pointer;
+            transition:  color .3s ease;
+
+            &:hover {
+                color: $color_2;
+            }
         }
     }
 
@@ -50,6 +65,11 @@
         a {
             color: red;
             text-decoration: none;
+            transition:  color .3s ease;
+
+            &:hover {
+                color: $color_2;
+            }
         }
     }
 }
@@ -62,9 +82,11 @@
 
         .social_c {
             width: 30%;
+            max-width: 310px;
         }
 
         .menu_c {
+            max-width: 515px;
             width: 50%;
         }
     }

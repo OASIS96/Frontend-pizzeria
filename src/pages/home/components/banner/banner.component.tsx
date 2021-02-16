@@ -4,7 +4,7 @@ import bgBanner from "../../../../assets/banner.jpg";
 import MenuSvg from "../../../../assets/menu.svg";
 import { BannerI } from "../../../../models/banner.model";
 
-export const BannerComponent = ({ contactRef,aboutRef,menuRef }: BannerI) => {
+export const BannerComponent = ({ contactRef, aboutRef, menuRef }: BannerI) => {
   const navRef = useRef<HTMLUListElement>(null);
   const buttonMenu = useRef<HTMLButtonElement>(null);
   const headerRef = useRef<HTMLHeadElement>(null);
@@ -39,9 +39,7 @@ export const BannerComponent = ({ contactRef,aboutRef,menuRef }: BannerI) => {
   };
 
   const goToMenu = () => {
-    console.log(menuRef.current)
-    menuRef.current?.scrollIntoView()
-    
+    menuRef.current?.scrollIntoView();
   };
 
   const goToStart = () => {
@@ -74,9 +72,15 @@ export const BannerComponent = ({ contactRef,aboutRef,menuRef }: BannerI) => {
           <li className="menu_item" onClick={goToStart}>
             Inicio
           </li>
-          <li className="menu_item" onClick={goToAbout}>Acerca de</li>
-          <li className="menu_item" onClick={goToMenu}>Productos</li>
-          <li className="menu_item" onClick={goToContact}>Contacto</li>
+          <li className="menu_item" onClick={goToAbout}>
+            Acerca de
+          </li>
+          <li className="menu_item" onClick={goToMenu}>
+            Productos
+          </li>
+          <li className="menu_item" onClick={goToContact}>
+            Contacto
+          </li>
         </ul>
       </header>
       <div className="banner_content">
