@@ -3,11 +3,12 @@ import Icon1 from '../../../../assets/Icon-clock.svg';
 import Icon2 from '../../../../assets/Icon-nature.svg';
 import Icon3 from '../../../../assets/Icon-pizza.svg';
 import AboutBg from '../../../../assets/Image-about.jpg';
+import { AboutI } from '../../../../models/about.model';
 import './about.component.scss';
 
-export const AboutComponent = () => {
+export const AboutComponent = ({aboutRef}:AboutI) => {
     return (
-      <div className="about_c_c" style={{backgroundImage: `url(${AboutBg})`}}>
+      <div className="about_c_c" style={{backgroundImage: `url(${AboutBg})`}} ref={aboutRef}>
         <h1 className="title_about">Nuestras pizzas hablan por nosotros</h1>
         <p className="descrip_about">
           Praesent ipsum mauris, rutrum et dapibus ac, pulvinar sagittis lacus.

@@ -1,7 +1,7 @@
 @import '../../../../scss/fonts','../../../../scss/colors.scss';
 
 .menu_c_c {
-    padding: 70px 30px;
+    padding: 70px 30px 0px 30px;
     position: relative;
     z-index: 1;
 
@@ -16,7 +16,8 @@
     .cards_c {
         display: grid;
         gap: 35px;
-        margin-top: 50px;
+        margin: 50px auto 0px auto;
+        width: 300px;
 
         .card {
             display: grid;
@@ -55,38 +56,84 @@
         font-size: 12px;
         font-weight: 600;
         letter-spacing: 1px;
+        cursor: pointer;
+        transition: background-color .3s ease, color .3s ease;
+
+            &:hover {
+                background-color: $color_2;
+                color: $color_3;
+                
+            }
     }
 }
 
+@media (min-width:712px) {
+    .menu_c_c {
+        .cards_c {
+            width: unset;
+            grid-template-columns: 1fr 1fr;
+        }
+    }
+} 
+
 @media (min-width:768px) {
         .menu_c_c {
-
             .title_menu {
                 font-size: 3rem;
             }
 
             .cards_c {
-                width: 45%;
                 gap: 30px;
-                margin: 50px auto 0px auto;
 
-            .card {
+                .card {
 
-                .title_card {
-                    font-size: 2rem;
-                }
+                    .title_card {
+                        font-size: 2rem;
+                    }
 
-                .descr_card {
-                    font-size: 1.2rem;
-                    line-height: 1.7rem;
+                    .descr_card {
+                        font-size: 1.2rem;
+                        line-height: 1.7rem;
+                    }
                 }
             }
-        }
 
         .btn_load_more {
             width: 200px;
             height: 45px;
             font-size: 1rem;
+        }
+    }
+}
+
+@media (min-width:1024px) {
+    .menu_c_c {
+        width: 85%;
+        margin: auto;
+    }
+} 
+@media (min-width:1290px) {
+    .menu_c_c {
+        width: 85%;
+        margin: auto;
+        padding: 120px 0px 0px 0px;
+
+        .cards_c {
+            grid-template-columns: 1fr 1fr 1fr;
+
+            .card {
+                &:nth-child(4) {
+                    grid-column: 2 /  3;
+                }
+            }
+        }
+    }
+} 
+
+@media (min-width:1680px) {
+    .menu_c_c {
+        .cards_c  {
+            max-width: 1420px;
         }
     }
 }

@@ -3,6 +3,7 @@
 .slider_c_c {
     background-size: cover;
     padding: 40px 20px;
+    position: relative;
 
     .container {
         overflow: hidden;
@@ -26,23 +27,30 @@
                         max-width: 100%;;
                     }
                 }
-    
-                .title_slide {
-                    font-family: $font_1;
-                    font-weight: 400;
-                    text-align: center;
+
+                .text_slide_container {
+                    display: grid;
+                    justify-items: center;
+                    gap: 15px;
+                    .title_slide {
+                        font-family: $font_1;
+                        font-weight: 400;
+                        text-align: center;
+                    }
+        
+                    .price_slide {
+                        font-family: $font_3;
+                        font-size: 2rem;
+                    }
+        
+                    .description_slide {
+                        font-family: $font_4;
+                        text-align: center;
+                        line-height: 1.4rem;
+                    }
                 }
     
-                .price_slide {
-                    font-family: $font_3;
-                    font-size: 2rem;
-                }
-    
-                .description_slide {
-                    font-family: $font_4;
-                    text-align: center;
-                    line-height: 1.4rem;
-                }
+                
             }
         }
     }
@@ -62,6 +70,7 @@
             width: 40px;
             height: 40px;
             background-color: transparent;
+            cursor: pointer;
 
             svg {
                 transform: scale(2);
@@ -84,16 +93,21 @@
         .container {
             .slides_container {
                 .slide,.slide_first,.slide_last {
-                    .title_slide {
-                        font-size: 2.5rem;
-                    }
-                    .price_slide {
-                        font-size: 2.5rem;
-                    }
+                    .text_slide_container {
+                        width: 60%;
+                        margin: auto;
 
-                    .description_slide {
-                        font-size: 1.2rem;
-                        line-height: 1.7rem;
+                        .title_slide {
+                            font-size: 2.5rem;
+                        }
+                        .price_slide {
+                            font-size: 2.5rem;
+                        }
+    
+                        .description_slide {
+                            font-size: 1.2rem;
+                            line-height: 1.7rem;
+                        }
                     }
                 }
             }
@@ -120,3 +134,87 @@
         }
     }
 }
+
+@media (min-width:1024px) {
+    .slider_c_c {
+        position: relative;
+        .container {
+            .slides_container {
+                .slide,.slide_first,.slide_last {
+                    display: grid;
+                    grid-template-columns: 1fr 1fr;
+
+                    .img_container {
+                        grid-column: 2 / span 2;
+                        grid-row: 1 / span 1;
+                    }
+
+                    .text_slide_container {
+                        width: 100%;
+                    }
+                }
+            }
+        }
+
+        .controls {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%,-50%);
+            width: 90%;
+        }
+    }
+}
+
+@media (min-width:1160px) {
+    .slider_c_c {
+        height: 500px;
+        z-index: 1;
+        position: relative;
+
+        .container {
+            height: 600px;
+            position: absolute;
+            width: 70%;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+
+            .slides_container {
+                height: 100%;
+
+                .slide,.slide_first,.slide_last {
+                    grid-template-columns: 1fr 1fr 1fr;
+
+                   .img_container {
+                       width: 100%;
+                       justify-self: center;
+                       align-items: center;
+                       justify-content: center;
+                       display: flex;
+                   }
+                    
+                }
+            }
+        }
+
+        .controls {
+            width: 80%;
+        }
+    }
+}
+
+
+
+@media (min-width:1500px) {
+    .slider_c_c {
+        .container {
+            width: 60%;
+        }
+
+        .controls {
+            width: 70%;
+        }
+    }
+}
+

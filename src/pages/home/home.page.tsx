@@ -8,33 +8,31 @@ import BG from "../../assets/bg.jpg";
 
 import "./home.styles.scss";
 import { FooterComponent } from "./components/footer/footer.component";
-import axios from "axios";
-
 
 const HomePage = () => {
-
   const contactRef = useRef<HTMLDivElement>(null);
-
-  const getData = async () => {
-    const { data } = await axios.get("http://localhost:4000/api/slide-pizzas");
-    console.log(data);
-  }
-
-  useEffect(()=>{
-  },[])
+  const menuRef = useRef<HTMLDivElement>(null);
+  const aboutRef = useRef<HTMLDivElement>(null);
 
   return (
     <div className="home_p_c">
-      <BannerComponent contactRef={contactRef}/>
-      <AboutComponent />
+      <BannerComponent
+        contactRef={contactRef}
+        menuRef={menuRef}
+        aboutRef={aboutRef}
+      />
+      <AboutComponent aboutRef={aboutRef}/>
       <SliderComponent />
-      <div className="container_home_page" style={{ backgroundImage: `url(${BG})` }}>
-        <MenuComponent />
-        <ContactComponent contactRef={contactRef}/>
+      <div
+        className="container_home_page"
+        style={{ backgroundImage: `url(${BG})` }}
+      >
+        <MenuComponent menuRef={menuRef}/>
+        <ContactComponent contactRef={contactRef} />
       </div>
       <FooterComponent />
     </div>
   );
 };
 
-export default HomePage
+export default HomePage;

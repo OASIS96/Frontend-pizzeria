@@ -4,11 +4,12 @@ import Pizza1 from "../../../../assets/p-1 1.png";
 import Pizza2 from "../../../../assets/p-2 1.png";
 import Pizza3 from "../../../../assets/p-3 1.png";
 import Pizza4 from "../../../../assets/p-4 1.png";
+import { MenuI } from "../../../../models/menu.model";
 
 
-export const MenuComponent = () => {
+export const MenuComponent = ({menuRef}:MenuI) => {
   return (
-    <div className="menu_c_c">
+    <div className="menu_c_c" ref={menuRef}>
       <h1 className="title_menu">Nuestras Pizzas</h1>
       <div className="cards_c">
         <div className="card">

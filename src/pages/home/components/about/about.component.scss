@@ -44,6 +44,7 @@
             display: grid;
             justify-items: center;
             gap: 20px;
+            width: 300px;
 
             .title_card {
                 color: $color_2;
@@ -87,6 +88,39 @@
                 .description_card {
                     font-size: 1.2rem;
                     line-height: 1.7rem;
+                }
+            }
+        }
+    }
+}
+
+@media(min-width:1024px) {
+    .about_c_c {
+        .cards_container {
+            grid-template-columns: repeat(2,1fr);
+            gap: 50px;
+
+            .card {
+                &:nth-child(3) {
+                    grid-column: 1 / 3;
+                }
+            }
+        }
+    }
+}
+
+@media(min-width:1390px)  {
+    .about_c_c {
+        padding: 200px 100px;
+
+        .cards_container {
+            grid-template-columns: repeat(3,1fr);
+            max-width: 1200px;
+            margin: 70px auto 0px auto;
+
+            .card {
+                &:nth-child(3) {
+                    grid-column: 3 / span 3;
                 }
             }
         }

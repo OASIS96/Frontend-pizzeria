@@ -10,24 +10,24 @@ export const SliderComponent = () => {
   let index = 1;
   const [slides_number, setSlides_number] = useState(0);
 
-  const moveAllSliderLeft = (ev:globalThis.TransitionEvent) => {
+  const moveAllSliderLeft = (ev: globalThis.TransitionEvent) => {
     if (index === 0) {
       slider.style.transition = "";
       index = slides_number - 2;
       slider.style.transform = `translateX(-${index * 20}%)`;
     }
-  }
+  };
 
-  const moveAllSliderRigth = (ev:globalThis.TransitionEvent) => {
+  const moveAllSliderRigth = (ev: globalThis.TransitionEvent) => {
     if (index === slides_number - 1) {
       slider.style.transition = "";
       index = 1;
       slider.style.transform = `translateX(-${index * 20}%)`;
     }
-  }
+  };
 
   const changeSlideLeft = () => {
-    if(index <= 0) return
+    if (index <= 0) return;
     slider.removeEventListener("transitionend", moveAllSliderLeft);
     slider.removeEventListener("transitionend", moveAllSliderRigth);
     if (index > 0) {
@@ -39,7 +39,7 @@ export const SliderComponent = () => {
   };
 
   const changeSlideRight = () => {
-    if(index >= slides_number - 1) return
+    if (index >= slides_number - 1) return;
     slider.removeEventListener("transitionend", moveAllSliderLeft);
     slider.removeEventListener("transitionend", moveAllSliderRigth);
     if (index < slides_number - 1) {
@@ -65,70 +65,80 @@ export const SliderComponent = () => {
             <div className="img_container">
               <img src={PizzaImg} alt="" />
             </div>
-            <h1 className="title_slide">Pizza Americana 3</h1>
-            <span className="price_slide">S/.30.00</span>
-            <p className="description_slide">
-              Curabitur rutrum erat eu tincidunt bibendum. Sed sollicitudin
-              tempus nisl a porta. Sed euismod varius justo, non venenatis
-              lacus. Sed felis elit, elementum vitae vestibulum id, malesuada
-              vel leo.
-            </p>
+            <div className="text_slide_container">
+              <h1 className="title_slide">Pizza Americana 3</h1>
+              <span className="price_slide">S/.30.00</span>
+              <p className="description_slide">
+                Curabitur rutrum erat eu tincidunt bibendum. Sed sollicitudin
+                tempus nisl a porta. Sed euismod varius justo, non venenatis
+                lacus. Sed felis elit, elementum vitae vestibulum id, malesuada
+                vel leo.
+              </p>
+            </div>
           </div>
 
           <div className="slide">
             <div className="img_container">
               <img src={PizzaImg} alt="" />
             </div>
-            <h1 className="title_slide">Pizza Americana</h1>
-            <span className="price_slide">S/.30.00</span>
-            <p className="description_slide">
-              Curabitur rutrum erat eu tincidunt bibendum. Sed sollicitudin
-              tempus nisl a porta. Sed euismod varius justo, non venenatis
-              lacus. Sed felis elit, elementum vitae vestibulum id, malesuada
-              vel leo.
-            </p>
+            <div className="text_slide_container">
+              <h1 className="title_slide">Pizza Americana 3</h1>
+              <span className="price_slide">S/.30.00</span>
+              <p className="description_slide">
+                Curabitur rutrum erat eu tincidunt bibendum. Sed sollicitudin
+                tempus nisl a porta. Sed euismod varius justo, non venenatis
+                lacus. Sed felis elit, elementum vitae vestibulum id, malesuada
+                vel leo.
+              </p>
+            </div>
           </div>
 
           <div className="slide">
             <div className="img_container">
               <img src={PizzaImg} alt="" />
             </div>
-            <h1 className="title_slide">Pizza Americana 2</h1>
-            <span className="price_slide">S/.30.00</span>
-            <p className="description_slide">
-              Curabitur rutrum erat eu tincidunt bibendum. Sed sollicitudin
-              tempus nisl a porta. Sed euismod varius justo, non venenatis
-              lacus. Sed felis elit, elementum vitae vestibulum id, malesuada
-              vel leo.
-            </p>
+            <div className="text_slide_container">
+              <h1 className="title_slide">Pizza Americana 3</h1>
+              <span className="price_slide">S/.30.00</span>
+              <p className="description_slide">
+                Curabitur rutrum erat eu tincidunt bibendum. Sed sollicitudin
+                tempus nisl a porta. Sed euismod varius justo, non venenatis
+                lacus. Sed felis elit, elementum vitae vestibulum id, malesuada
+                vel leo.
+              </p>
+            </div>
           </div>
 
           <div className="slide">
             <div className="img_container">
               <img src={PizzaImg} alt="" />
             </div>
-            <h1 className="title_slide">Pizza Americana 3</h1>
-            <span className="price_slide">S/.30.00</span>
-            <p className="description_slide">
-              Curabitur rutrum erat eu tincidunt bibendum. Sed sollicitudin
-              tempus nisl a porta. Sed euismod varius justo, non venenatis
-              lacus. Sed felis elit, elementum vitae vestibulum id, malesuada
-              vel leo.
-            </p>
+            <div className="text_slide_container">
+              <h1 className="title_slide">Pizza Americana 3</h1>
+              <span className="price_slide">S/.30.00</span>
+              <p className="description_slide">
+                Curabitur rutrum erat eu tincidunt bibendum. Sed sollicitudin
+                tempus nisl a porta. Sed euismod varius justo, non venenatis
+                lacus. Sed felis elit, elementum vitae vestibulum id, malesuada
+                vel leo.
+              </p>
+            </div>
           </div>
 
           <div className="slide_first">
             <div className="img_container">
               <img src={PizzaImg} alt="" />
             </div>
-            <h1 className="title_slide">Pizza Americana</h1>
-            <span className="price_slide">S/.30.00</span>
-            <p className="description_slide">
-              Curabitur rutrum erat eu tincidunt bibendum. Sed sollicitudin
-              tempus nisl a porta. Sed euismod varius justo, non venenatis
-              lacus. Sed felis elit, elementum vitae vestibulum id, malesuada
-              vel leo.
-            </p>
+            <div className="text_slide_container">
+              <h1 className="title_slide">Pizza Americana 3</h1>
+              <span className="price_slide">S/.30.00</span>
+              <p className="description_slide">
+                Curabitur rutrum erat eu tincidunt bibendum. Sed sollicitudin
+                tempus nisl a porta. Sed euismod varius justo, non venenatis
+                lacus. Sed felis elit, elementum vitae vestibulum id, malesuada
+                vel leo.
+              </p>
+            </div>
           </div>
         </div>
       </div>

@@ -66,6 +66,7 @@ export const ContactComponent = ({contactRef}:ContactI) => {
             <input
               type="text"
               name="name"
+              autoComplete="off"
               className={errors.name?.type === "required" ? "error" : ""}
               placeholder="Nombre"
               ref={register({
@@ -80,6 +81,7 @@ export const ContactComponent = ({contactRef}:ContactI) => {
             <input
               type="text"
               name="email"
+              autoComplete="off"
               className={
                 errors.email?.type === "required"
                   ? "error"
@@ -103,6 +105,7 @@ export const ContactComponent = ({contactRef}:ContactI) => {
             <input
               type="text"
               name="subject"
+              autoComplete="off"
               className={errors.subject?.type === "required" ? "error" : ""}
               placeholder="Asunto"
               ref={register({
@@ -117,6 +120,7 @@ export const ContactComponent = ({contactRef}:ContactI) => {
             <textarea
               name="message"
               placeholder="Mensaje"
+              autoComplete="off"
               className={errors.message?.type === "required" ? "error" : ""}
               ref={register({
                 required: true,
