@@ -3,7 +3,7 @@ import { useForm } from "react-hook-form";
 import { ContactI } from "../../../../models/contact.model";
 import "./contact.component.scss";
 
-export const ContactComponent = ({contactRef}:ContactI) => {
+export const ContactComponent = ({ contactRef }: ContactI) => {
   const { register, handleSubmit, errors } = useForm();
 
   const pattern = /^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$/;
@@ -74,7 +74,9 @@ export const ContactComponent = ({contactRef}:ContactI) => {
               })}
             />
             {errors.name?.type === "required" ? (
-              <p className="message_error visible fadeIn">EL nombre es requerido</p>
+              <p className="message_error visible fadeIn">
+                EL nombre es requerido
+              </p>
             ) : null}
           </div>
           <div className="input_c">
@@ -96,9 +98,13 @@ export const ContactComponent = ({contactRef}:ContactI) => {
               })}
             />
             {errors.email?.type === "required" ? (
-              <p className="message_error visible fadeIn">EL email es requerido</p>
+              <p className="message_error visible fadeIn">
+                EL email es requerido
+              </p>
             ) : errors.email?.type === "pattern" ? (
-              <p className="message_error visible fadeIn">EL email es invalido</p>
+              <p className="message_error visible fadeIn">
+                EL email es invalido
+              </p>
             ) : null}
           </div>
           <div className="input_c">
@@ -113,7 +119,9 @@ export const ContactComponent = ({contactRef}:ContactI) => {
               })}
             />
             {errors.subject?.type === "required" ? (
-              <p className="message_error visible fadeIn">EL asunto es requerido</p>
+              <p className="message_error visible fadeIn">
+                EL asunto es requerido
+              </p>
             ) : null}
           </div>
           <div className="textarea_c">
@@ -127,7 +135,9 @@ export const ContactComponent = ({contactRef}:ContactI) => {
               })}
             />
             {errors.message?.type === "required" ? (
-              <p className="message_error visible fadeIn">EL mensaje es requerido</p>
+              <p className="message_error visible fadeIn">
+                EL mensaje es requerido
+              </p>
             ) : null}
           </div>
           <button
